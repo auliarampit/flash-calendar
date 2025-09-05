@@ -28,8 +28,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "@marceloterreiro/eslint-config": "*",
-    "@marceloterreiro/tsconfig": "*",
     "@types/react": "~18.2.45",
     "eslint": "^8.56.0",
     "source-map-explorer": "^2.5.3",

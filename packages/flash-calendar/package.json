@@ -26,8 +26,6 @@
     "mitt": "^3.0.1"
   },
   "devDependencies": {
-    "@marceloterreiro/eslint-config": "*",
-    "@marceloterreiro/tsconfig": "*",
     "@shopify/flash-list": "^1.6.3",
     "@testing-library/react-hooks": "^8.0.1",
     "@types/bun": "^1.0.5",
