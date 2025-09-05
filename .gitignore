@@ -1,6 +1,7 @@
 # Monorepo
 apps/*/credentials.json
 apps/*/dist
+packages/*/dist
 
 # Turborepo
 .turbo
