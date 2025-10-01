@@ -1,9 +1,7 @@
 import {
   Children,
   Fragment,
-  isValidElement,
   useMemo,
-  type ReactElement,
   type ReactNode,
 } from "react";
 import { StyleSheet, View, type ViewStyle } from "react-native";
@@ -29,10 +27,6 @@ export interface VStackProps {
   grow?: boolean;
 }
 
-function isFragment(child: ReactNode): child is ReactElement {
-  return isValidElement(child) && child.type === Fragment;
-}
-
 export function VStack({
   children,
   spacing = 0,
@@ -53,13 +47,9 @@ export function VStack({
 
   return (
     <View style={containerStyles}>
-      {Children.toArray(children)
-        .map((c) => (isFragment(c) ? c.props.children : c))
-        .flat()
-        .filter((c) => c !== null && typeof c !== "undefined")
-        .map((child, i) => (
-          <Fragment key={i}>{child}</Fragment>
-        ))}
+      {Children.map(children, (child, index) => (
+        <Fragment key={index}>{child}</Fragment>
+      ))}
     </View>
   );
 }

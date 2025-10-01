@@ -215,7 +215,16 @@ export const CalendarList = memo(
       }));
     }, [calendarProps, monthList]);
 
+    const lastEndReachedTime = useRef(0);
+    
     const handleOnEndReached = useCallback(() => {
+      const now = Date.now();
+      // Throttle onEndReached to prevent infinite loops (minimum 500ms between calls)
+      if (now - lastEndReachedTime.current < 500) {
+        return;
+      }
+      lastEndReachedTime.current = now;
+      
       if (calendarMaxDateId) {
         onEndReached?.();
         return;

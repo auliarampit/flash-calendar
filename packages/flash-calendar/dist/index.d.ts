@@ -1,6 +1,6 @@
 import * as react from 'react';
 import { ReactNode } from 'react';
-import { TextProps, ViewStyle, TextStyle, ColorSchemeName } from 'react-native';
+import { ViewStyle, TextStyle, TextProps, ColorSchemeName } from 'react-native';
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import { FlashListProps, FlashList } from '@shopify/flash-list';
 import * as mitt from 'mitt';
@@ -437,11 +437,11 @@ declare const useCalendarList: ({ calendarInitialMonthId, calendarPastScrollRang
     /**
      * Appends new months to the list.
      */
-    appendMonths: (numberOfMonths: number) => CalendarMonth[];
+    appendMonths: (numberOfMonths: number) => void;
     /**
      * Prepends new months to the list.
      */
-    prependMonths: (numberOfMonths: number) => CalendarMonth[];
+    prependMonths: (numberOfMonths: number) => void;
     /**
      * Adds missing months to the list, so that the target month is included.
      */
@@ -534,7 +534,7 @@ interface CalendarListRef {
     scrollToDate: (date: Date, animated: boolean, params?: ImperativeScrollParams) => void;
     scrollToOffset: (offset: number, animated: boolean) => void;
 }
-declare const CalendarList: react.MemoExoticComponent<react.ForwardRefExoticComponent<CalendarListProps & react.RefAttributes<CalendarListRef>>>;
+declare const CalendarList: react.NamedExoticComponent<CalendarListProps & react.RefAttributes<CalendarListRef>>;
 
 interface HStackProps {
     alignItems?: ViewStyle["alignItems"];
